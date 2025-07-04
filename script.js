@@ -97,7 +97,7 @@ payButton.addEventListener('click', () => {
     const iva = totalCentavos - baseSinIVA;
 
     PayPhone.Button({
-        token: "XkViSRJRWwFS3Md0cgOtkDi6Ek1lPJt2tOxOAm4BtQLV4I0w-qoxhvhhS9n3nlCj0kjPWwzcqo9FGYwezlyC-9ZNWS7i-cl09hYX_ah1HWWVX6qKT4-o9vlxPcEkRkB6x4gw7277LvVRZz_lNxsiCuBOQsslo7J-pe9yVl_C4C-MLFUB7aSJGfgT3-ey2YFFOSjQWESFp29BstVgAEvxjJxUfCnf416RD_IDsv10wyFM9NH5yAXL-DZbmCHPm4H62uvO4iyGZ86zHUlWCC9zaTcE2t25ZvouuoSYKKScstwjV1BNTtVj6BJ0Bz6rcatK1nZiYjdMwrYwwzEMH_-EVefNaPI", // token real
+        token: "CypQXFuXTyI-suQGu6tJIKjnv5mM64yMRws47kEuLpWYZ2Btib7yeKC1X4ZRELv4y_iBNIAdTuqeRn-9WXN8G5XTiDtsnODT7Zxtm66Z3n6I5BiEYZvZn-J7FSrhxzIaK3Xkql_eIuj_bV12paihMQpxV_v5T0VUVumXgVl6Lwbrnf4gyQ4vYeBkTMF40FO0aCeyoVROiBToOABKFpyZ4HbuqexW9JqbVsG2zbkZV8Fcwt2pG_58D9s-HtezMn9uUphmhz94RMppA3OxhSO5AWPJs5M0QKFUgXI2z4YagYHZSoCblr0T-LTHFfR2p0z-dHS6DMwdtKgDcmPEWEniYt5sFg0", 
         btnText: "Pagar Ahora",
         amount: totalCentavos,
         amountWithoutTax: baseSinIVA,
