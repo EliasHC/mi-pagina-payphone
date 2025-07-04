@@ -1,7 +1,7 @@
 const products = [{
         name: "Camiseta Roja",
         price: 19.99,
-        image: "https://via.placeholder.com/200x150/ff4444/ffffff?text=Camiseta"
+        image: "img/camisa_roja.jpg"
     },
     {
         name: "Zapatos Negros",
