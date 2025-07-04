@@ -2,7 +2,7 @@ const products = [{
         name: "Camiseta Roja",
         price: 19.99,
         image: "https://via.placeholder.com/200x150/ff4444/ffffff?text=Camiseta"
-    }, 
+    },
     {
         name: "Zapatos Negros",
         price: 49.99,
@@ -12,6 +12,31 @@ const products = [{
         name: "Gorra Azul",
         price: 14.99,
         image: "https://via.placeholder.com/200x150/008cba/ffffff?text=Gorra"
+    },
+    {
+        name: "Pantalón Jeans",
+        price: 34.99,
+        image: "https://via.placeholder.com/200x150/444444/ffffff?text=Jeans"
+    },
+    {
+        name: "Mochila Negra",
+        price: 59.99,
+        image: "https://via.placeholder.com/200x150/000000/ffffff?text=Mochila"
+    },
+    {
+        name: "Gafas de Sol",
+        price: 22.50,
+        image: "https://via.placeholder.com/200x150/ffcc00/000000?text=Gafas"
+    },
+    {
+        name: "Camisa Blanca",
+        price: 25.99,
+        image: "https://via.placeholder.com/200x150/ffffff/000000?text=Camisa"
+    },
+    {
+        name: "Reloj Deportivo",
+        price: 89.90,
+        image: "https://via.placeholder.com/200x150/005f7a/ffffff?text=Reloj"
     }
 ];
 
