@@ -121,3 +121,16 @@ main {
 .pay-btn:hover {
   background-color: #059669;
 }
+.remove-btn {
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  color: #dc2626;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  color: #b91c1c;
+}
+
