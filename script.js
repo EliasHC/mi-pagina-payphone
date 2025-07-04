@@ -1,4 +1,5 @@
-const products = [{
+const products = [
+    {
         name: "Camiseta Roja",
         price: 19.99,
         image: "img/camisa_roja.jpg"
@@ -45,24 +46,6 @@ const cartList = document.getElementById('cart');
 const payButton = document.getElementById('payButton');
 const cart = [];
 
-function updateCart() {
-    cartList.innerHTML = "";
-    cart.forEach((item, index) => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-            ${item.name} - $${item.price.toFixed(2)}
-            <button onclick="removeFromCart(${index})" class="remove-btn">❌</button>
-        `;
-        cartList.appendChild(li);
-    });
-}
-
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCart();
-}
-
-
 // Mostrar productos
 products.forEach(product => {
     const card = document.createElement('div');
@@ -84,7 +67,23 @@ products.forEach(product => {
     container.appendChild(card);
 });
 
-// Botón de pago con PayPhone
+function updateCart() {
+    cartList.innerHTML = "";
+    cart.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            ${item.name} - $${item.price.toFixed(2)}
+            <button onclick="removeFromCart(${index})" class="remove-btn">❌</button>
+        `;
+        cartList.appendChild(li);
+    });
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
 payButton.addEventListener('click', () => {
     if (cart.length === 0) {
         alert("El carrito está vacío");
@@ -92,12 +91,14 @@ payButton.addEventListener('click', () => {
     }
 
     const total = cart.reduce((sum, item) => sum + item.price, 0);
-    const totalCentavos = Math.round(total * 100);
-    const baseSinIVA = Math.round(totalCentavos * 0.89);
+    const totalCentavos = Math.round(total * 100); // Total en centavos
+    const baseSinIVA = Math.round(totalCentavos / 1.12); // 12% IVA
     const iva = totalCentavos - baseSinIVA;
 
+    console.log("Total:", totalCentavos, "Base sin IVA:", baseSinIVA, "IVA:", iva);
+
     PayPhone.Button({
-        token: "CypQXFuXTyI-suQGu6tJIKjnv5mM64yMRws47kEuLpWYZ2Btib7yeKC1X4ZRELv4y_iBNIAdTuqeRn-9WXN8G5XTiDtsnODT7Zxtm66Z3n6I5BiEYZvZn-J7FSrhxzIaK3Xkql_eIuj_bV12paihMQpxV_v5T0VUVumXgVl6Lwbrnf4gyQ4vYeBkTMF40FO0aCeyoVROiBToOABKFpyZ4HbuqexW9JqbVsG2zbkZV8Fcwt2pG_58D9s-HtezMn9uUphmhz94RMppA3OxhSO5AWPJs5M0QKFUgXI2z4YagYHZSoCblr0T-LTHFfR2p0z-dHS6DMwdtKgDcmPEWEniYt5sFg0", 
+        token: "CypQXFuXTyI-suQGu6tJIKjnv5mM64yMRws47kEuLpWYZ2Btib7yeKC1X4ZRELv4y_iBNIAdTuqeRn-9WXN8G5XTiDtsnODT7Zxtm66Z3n6I5BiEYZvZn-J7FSrhxzIaK3Xkql_eIuj_bV12paihMQpxV_v5T0VUVumXgVl6Lwbrnf4gyQ4vYeBkTMF40FO0aCeyoVROiBToOABKFpyZ4HbuqexW9JqbVsG2zbkZV8Fcwt2pG_58D9s-HtezMn9uUphmhz94RMppA3OxhSO5AWPJs5M0QKFUgXI2z4YagYHZSoCblr0T-LTHFfR2p0z-dHS6DMwdtKgDcmPEWEniYt5sFg0",
         btnText: "Pagar Ahora",
         amount: totalCentavos,
         amountWithoutTax: baseSinIVA,
@@ -105,7 +106,7 @@ payButton.addEventListener('click', () => {
         clientTransactionId: "pedido_" + Date.now(),
         callback: function(response) {
             console.log("Respuesta PayPhone:", response);
-            alert("Pago procesado correctamente. Ver consola.");
+            alert("Pago procesado correctamente. Ver consola para más detalles.");
         }
     });
 });
