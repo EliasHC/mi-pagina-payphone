@@ -97,7 +97,7 @@ payButton.addEventListener('click', () => {
     const iva = totalCentavos - baseSinIVA;
 
     PayPhone.Button({
-        token: "TU_TOKEN_DE_COMERCIO_AQUÍ", // ← REEMPLAZA esto con tu token real
+        token: "XkViSRJRWwFS3Md0cgOtkDi6Ek1lPJt2tOxOAm4BtQLV4I0w-qoxhvhhS9n3nlCj0kjPWwzcqo9FGYwezlyC-9ZNWS7i-cl09hYX_ah1HWWVX6qKT4-o9vlxPcEkRkB6x4gw7277LvVRZz_lNxsiCuBOQsslo7J-pe9yVl_C4C-MLFUB7aSJGfgT3-ey2YFFOSjQWESFp29BstVgAEvxjJxUfCnf416RD_IDsv10wyFM9NH5yAXL-DZbmCHPm4H62uvO4iyGZ86zHUlWCC9zaTcE2t25ZvouuoSYKKScstwjV1BNTtVj6BJ0Bz6rcatK1nZiYjdMwrYwwzEMH_-EVefNaPI", // token real
         btnText: "Pagar Ahora",
         amount: totalCentavos,
         amountWithoutTax: baseSinIVA,
