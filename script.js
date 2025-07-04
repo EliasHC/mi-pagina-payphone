@@ -22,12 +22,21 @@ const cart = [];
 
 function updateCart() {
     cartList.innerHTML = "";
-    cart.forEach(item => {
+    cart.forEach((item, index) => {
         const li = document.createElement("li");
-        li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        li.innerHTML = `
+            ${item.name} - $${item.price.toFixed(2)}
+            <button onclick="removeFromCart(${index})" class="remove-btn">❌</button>
+        `;
         cartList.appendChild(li);
     });
 }
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
 
 // Mostrar productos
 products.forEach(product => {
