@@ -2,21 +2,34 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Catálogo de Productos</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Compras</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.payphone.com.ec/lib/js/payphone.js"></script>
 </head>
 
 <body>
-    <h1>Catálogo de Productos</h1>
 
-    <div id="product-list" class="grid"></div>
+    <header>
+        <h1>Catálogo de Productos</h1>
+    </header>
 
-    <h3>Carrito:</h3>
-    <ul id="cart"></ul>
+    <main>
+        <section class="product-container" id="product-list">
+            <!-- Productos generados con JS -->
+        </section>
 
-    <button id="payButton">Pagar con PayPhone</button>
+        <section class="cart-section">
+            <h2>Carrito de Compras</h2>
+            <ul class="cart-list" id="cart"></ul>
+            <button id="payButton" class="pay-btn">Pagar con PayPhone</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Catálogo JS PayPhone</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
